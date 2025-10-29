@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "CMakeFiles\\music_player.dir\\src\\Downloader.cpp.obj",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}

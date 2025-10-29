@@ -1,0 +1,3 @@
+C:/Users/intak/Desktop/music player/cmake-build-debug/CMakeFiles/music_player.dir
+C:/Users/intak/Desktop/music player/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/intak/Desktop/music player/cmake-build-debug/CMakeFiles/rebuild_cache.dir

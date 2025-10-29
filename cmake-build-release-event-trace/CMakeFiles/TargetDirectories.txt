@@ -1,0 +1,3 @@
+C:/Users/intak/Desktop/music player/cmake-build-release-event-trace/CMakeFiles/music_player.dir
+C:/Users/intak/Desktop/music player/cmake-build-release-event-trace/CMakeFiles/edit_cache.dir
+C:/Users/intak/Desktop/music player/cmake-build-release-event-trace/CMakeFiles/rebuild_cache.dir

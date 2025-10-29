@@ -1,0 +1,44 @@
+# ninja log v6
+13	130	7834545463238452	CMakeFiles/music_player.dir/src/TrackList.cpp.obj.ddi	5f1772df5ef72978
+246	267	7834547253042760	CMakeFiles/music_player.dir/src/Downloader.cpp.obj.modmap	bd8072ea9d1414c2
+14	248	7834534216545990	CMakeFiles/music_player.dir/src/Player.cpp.obj.ddi	5ac495e205ce0a09
+246	267	7834547253042760	CMakeFiles/music_player.dir/CXX.dd	bd8072ea9d1414c2
+8	246	7834547250658674	CMakeFiles/music_player.dir/src/main.cpp.obj.ddi	18fa604384ee0cb4
+11	605	7834536805481014	CMakeFiles/music_player.dir/src/Downloader.cpp.obj.ddi	d15013a4b17dc712
+246	267	7834547253042760	C:/Users/intak/Desktop/music player/cmake-build-release/CMakeFiles/music_player.dir/CXXModules.json	bd8072ea9d1414c2
+246	267	7834547253042760	CMakeFiles/music_player.dir/src/main.cpp.obj.modmap	bd8072ea9d1414c2
+246	267	7834547253042760	CMakeFiles/music_player.dir/src/TrackList.cpp.obj.modmap	bd8072ea9d1414c2
+657	2158	7834534222976393	CMakeFiles/music_player.dir/src/Player.cpp.obj	d3114f9b73aa144
+246	267	7834547253042760	CMakeFiles/music_player.dir/src/Player.cpp.obj.modmap	bd8072ea9d1414c2
+292	666	7834545466029466	CMakeFiles/music_player.dir/src/TrackList.cpp.obj	c81dbe2b44619fa4
+629	2104	7834536811663264	CMakeFiles/music_player.dir/src/Downloader.cpp.obj	3d84f909bd4413fa
+267	1859	7834547253247191	CMakeFiles/music_player.dir/src/main.cpp.obj	617823f129411548
+1859	2204	7834547269173397	music_player.exe	8c13d1cb439603fe
+2	343	7834514651851546	build.ninja	75bdd89fc52d036c
+9	232	7834547466463741	CMakeFiles/music_player.dir/src/main.cpp.obj.ddi	18fa604384ee0cb4
+232	251	7834547468685289	CMakeFiles/music_player.dir/CXX.dd	bd8072ea9d1414c2
+232	251	7834547468685289	C:/Users/intak/Desktop/music player/cmake-build-release/CMakeFiles/music_player.dir/CXXModules.json	bd8072ea9d1414c2
+232	251	7834547468685289	CMakeFiles/music_player.dir/src/main.cpp.obj.modmap	bd8072ea9d1414c2
+232	251	7834547468685289	CMakeFiles/music_player.dir/src/Downloader.cpp.obj.modmap	bd8072ea9d1414c2
+232	251	7834547468685289	CMakeFiles/music_player.dir/src/TrackList.cpp.obj.modmap	bd8072ea9d1414c2
+232	251	7834547468685289	CMakeFiles/music_player.dir/src/Player.cpp.obj.modmap	bd8072ea9d1414c2
+252	1871	7834547468883837	CMakeFiles/music_player.dir/src/main.cpp.obj	617823f129411548
+1871	2216	7834547485080841	music_player.exe	8c13d1cb439603fe
+8	230	7834547548764928	CMakeFiles/music_player.dir/src/main.cpp.obj.ddi	18fa604384ee0cb4
+230	250	7834547550990399	CMakeFiles/music_player.dir/CXX.dd	bd8072ea9d1414c2
+230	250	7834547550990399	C:/Users/intak/Desktop/music player/cmake-build-release/CMakeFiles/music_player.dir/CXXModules.json	bd8072ea9d1414c2
+230	250	7834547550990399	CMakeFiles/music_player.dir/src/main.cpp.obj.modmap	bd8072ea9d1414c2
+230	250	7834547550990399	CMakeFiles/music_player.dir/src/Downloader.cpp.obj.modmap	bd8072ea9d1414c2
+230	250	7834547550990399	CMakeFiles/music_player.dir/src/TrackList.cpp.obj.modmap	bd8072ea9d1414c2
+230	250	7834547550990399	CMakeFiles/music_player.dir/src/Player.cpp.obj.modmap	bd8072ea9d1414c2
+250	1783	7834547551192821	CMakeFiles/music_player.dir/src/main.cpp.obj	617823f129411548
+1784	2144	7834547566528002	music_player.exe	8c13d1cb439603fe
+8	234	7834547726781963	CMakeFiles/music_player.dir/src/main.cpp.obj.ddi	18fa604384ee0cb4
+234	252	7834547729054599	CMakeFiles/music_player.dir/CXX.dd	bd8072ea9d1414c2
+234	252	7834547729054599	C:/Users/intak/Desktop/music player/cmake-build-release/CMakeFiles/music_player.dir/CXXModules.json	bd8072ea9d1414c2
+234	252	7834547729054599	CMakeFiles/music_player.dir/src/main.cpp.obj.modmap	bd8072ea9d1414c2
+234	252	7834547729054599	CMakeFiles/music_player.dir/src/Downloader.cpp.obj.modmap	bd8072ea9d1414c2
+234	252	7834547729054599	CMakeFiles/music_player.dir/src/TrackList.cpp.obj.modmap	bd8072ea9d1414c2
+234	252	7834547729054599	CMakeFiles/music_player.dir/src/Player.cpp.obj.modmap	bd8072ea9d1414c2
+253	1828	7834547729233988	CMakeFiles/music_player.dir/src/main.cpp.obj	617823f129411548
+1828	2186	7834547744985474	music_player.exe	8c13d1cb439603fe
