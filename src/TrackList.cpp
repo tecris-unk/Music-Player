@@ -1,20 +1,40 @@
-//
-// Created by intak on 26.10.2025.
-//
-
 #include "TrackList.h"
-#include <iostream>
+#include <filesystem>
 
-bool TrackList::add(const std::string& path){
-    if(count >= 50){
-        std::cout << "you daun" << std::endl;
-        return false;
+
+namespace fs = std::filesystem;
+
+static bool hasAudioExt(const std::string& s) {
+    if (s.size() < 4) return false;
+    std::string ext;
+    size_t p = s.find_last_of('.');
+    if (p == std::string::npos) return false;
+    ext = s.substr(p);
+
+    for (auto &c : ext) if (c >= 'A' && c <= 'Z') c = char(c - 'A' + 'a');
+    return (ext == ".ogg" || ext == ".wav" || ext == ".flac");
+}
+
+void TrackList::scanFolder(const std::string& folderPath) {
+    count = 0;
+    try {
+        if (!fs::exists(folderPath)) return;
+
+        for (auto& e : fs::directory_iterator(folderPath)) {
+            if (!e.is_regular_file()) continue;
+            std::string p = e.path().string();
+            if (hasAudioExt(p)) {
+                if (count < 50) tracks[count++] = p;
+                else break;
+            }
+        }
+    } catch (...) {
+        count = 0;
     }
-    tracks[count++] = path;
-    return true;
 }
 
-void TrackList::list() const{
-    for(int i = 0;i < count; ++i)
-        std::cout << i + 2 << ". " << tracks[i] << std::endl;
+std::string &TrackList::getAt(int idx) {
+    return tracks[idx];
 }
+TrackList::TrackList() = default;
+TrackList::~TrackList() = default;

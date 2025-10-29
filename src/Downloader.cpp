@@ -7,14 +7,14 @@
 namespace fs = std::filesystem;
 
 std::string filenameFromUrl(const std::string& url) {
-    size_t pos = url.find_last_of("/\\");
+    unsigned long long pos = url.find_last_of("/\\");
     if (pos == std::string::npos)
-        return url;
+        return "file.ogg";
     return url.substr(pos + 1);
 }
 
-size_t writeData(void* ptr, size_t size, size_t nmemb, void* userdata) {
-    std::ofstream* file = static_cast<std::ofstream*>(userdata);
+size_t writeData(void* ptr, long long size, long long nmemb, void* userdata) {
+    auto file = static_cast<std::ofstream*>(userdata);
     file->write(static_cast<const char*>(ptr), size * nmemb);
     return size * nmemb;
 }
@@ -22,13 +22,13 @@ size_t writeData(void* ptr, size_t size, size_t nmemb, void* userdata) {
 bool downloadFile(const std::string& url, const std::string& output, std::string& errorMsg) {
     CURL* curl = curl_easy_init();
     if (!curl) {
-        errorMsg = "Не удалось инициализировать curl";
+        errorMsg = "Cant initialize curl";
         return false;
     }
 
     std::ofstream file(output, std::ios::binary);
     if (!file.is_open()) {
-        errorMsg = "Не удалось открыть файл для записи";
+        errorMsg = "Cant open file";
         curl_easy_cleanup(curl);
         return false;
     }
@@ -50,7 +50,7 @@ bool downloadFile(const std::string& url, const std::string& output, std::string
     }
 
     if (!fs::exists(output) || fs::file_size(output) == 0) {
-        errorMsg = "Файл не был загружен корректно";
+        errorMsg = "File isn't downloaded correctly";
         return false;
     }
 

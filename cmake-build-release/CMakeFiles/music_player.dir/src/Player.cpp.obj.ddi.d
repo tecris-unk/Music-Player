@@ -268,15 +268,6 @@ CMakeFiles\music_player.dir\src\Player.cpp.obj.ddi: \
  C:/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
  C:/Users/intak/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/include/SFML/System/Vector2.hpp \
  C:/Users/intak/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/include/SFML/System/Vector2.inl \
- C:/mingw64/include/c++/14.2.0/thread \
- C:/mingw64/include/c++/14.2.0/stop_token \
- C:/mingw64/include/c++/14.2.0/atomic \
- C:/mingw64/include/c++/14.2.0/bits/std_thread.h \
- C:/mingw64/include/c++/14.2.0/semaphore \
- C:/mingw64/include/c++/14.2.0/bits/semaphore_base.h \
- C:/mingw64/include/c++/14.2.0/bits/atomic_timed_wait.h \
- C:/mingw64/include/c++/14.2.0/bits/this_thread_sleep.h \
- C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
  C:/mingw64/include/c++/14.2.0/mutex \
  C:/mingw64/include/c++/14.2.0/bits/unique_lock.h \
  C:/mingw64/include/c++/14.2.0/iostream

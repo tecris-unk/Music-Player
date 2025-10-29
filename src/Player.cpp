@@ -2,52 +2,29 @@
 #include <iostream>
 #include <filesystem>
 
-Player::Player() {}
-Player::~Player() {
-    stop(); // гарантированно остановим поток при выходе
-    if (worker.joinable()) worker.join();
-}
+namespace fs = std::filesystem;
 
-bool Player::play(const std::string& path) {
-    stop(); // если уже что-то играет, остановим старое
-
-    // Проверяем, что файл существует
-    if (!std::filesystem::exists(path)) {
-        std::cerr << "❌ Ошибка: файл не найден: " << path << std::endl;
+bool Player::load(const std::string& path) {
+    std::lock_guard<std::mutex> lock(mtx);
+    if (!fs::exists(path) || fs::file_size(path) == 0) {
+        std::cerr << "Player::load - file missing or empty: " << path << "\n";
         return false;
     }
-
-    running = true;
-    worker = std::thread(&Player::playbackThread, this, path);
+    if (!music.openFromFile(path)) {
+        std::cerr << "Player::load - openFromFile failed: " << path << "\n";
+        return false;
+    }
+    currentPath = path;
+    paused = false;
     return true;
 }
 
-void Player::playbackThread(std::string path) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(100)); // диск успевает закрыть файл
-
-    {
-        std::lock_guard<std::mutex> lock(mtx);
-        if (!music.openFromFile(path)) {
-            std::cerr << "❌ Ошибка: не удалось открыть " << path << std::endl;
-            running = false;
-            return;
-        }
-        music.play();
-    }
-
-    // ждём окончания воспроизведения
-    while (running) {
-        {
-            std::lock_guard<std::mutex> lock(mtx);
-            if (music.getStatus() == sf::SoundSource::Status::Stopped)
-                break;
-        }
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    }
-
+void Player::play() {
     std::lock_guard<std::mutex> lock(mtx);
-    music.stop();
-    running = false;
+    if (!currentPath.empty()) {
+        music.play();
+        paused = false;
+    }
 }
 
 void Player::pause() {
@@ -55,20 +32,17 @@ void Player::pause() {
     auto status = music.getStatus();
     if (status == sf::SoundSource::Status::Playing) {
         music.pause();
-        std::cout << "⏸ Пауза\n";
+        paused = true;
     } else if (status == sf::SoundSource::Status::Paused) {
         music.play();
-        std::cout << "▶ Продолжение\n";
+        paused = false;
     }
 }
 
 void Player::stop() {
-    running = false;
-    {
-        std::lock_guard<std::mutex> lock(mtx);
-        music.stop();
-    }
-    if (worker.joinable()) worker.join();
+    std::lock_guard<std::mutex> lock(mtx);
+    music.stop();
+    paused = false;
 }
 
 bool Player::isPlaying() const {
